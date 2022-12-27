@@ -1,0 +1,40 @@
+mysql -h mlc-testcapstone.cyaielc9bmnf.us-east-1.rds.amazonaws.com -u student -p
+STUDENT123
+
+cp /home/hadoop/app_labels_new.txt /home/hadoop/capstonetelcom/stage/app_labels.txt
+cp /home/hadoop/label_categories.csv /home/hadoop/capstonetelcom/stage/label_categories.csv
+
+sqoop import --connect jdbc:mysql://mlc-testcapstone.cyaielc9bmnf.us-east-1.rds.amazonaws.com:3306/mlctest --table app_events --columns "event_id,app_id,is_installed,is_active" --target-dir /home/hadoop/capstonetelcom/stage/app_events --driver org.mariadb.jdbc.Driver --username student -P -m 1
+sqoop import --connect jdbc:mysql://mlc-testcapstone.cyaielc9bmnf.us-east-1.rds.amazonaws.com:3306/mlctest --table brand_device --columns "device_id,phone_brand,device_model" --target-dir /home/hadoop/capstonetelcom/stage/brand_device --driver org.mariadb.jdbc.Driver --username student -P -m 1
+sqoop import --connect jdbc:mysql://mlc-testcapstone.cyaielc9bmnf.us-east-1.rds.amazonaws.com:3306/mlctest --table events --columns "event_id,device_id,timestamp,longitude,latitude" --target-dir /home/hadoop/capstonetelcom/stage/events --driver org.mariadb.jdbc.Driver --username student -P -m 1
+sqoop import --connect jdbc:mysql://mlc-testcapstone.cyaielc9bmnf.us-east-1.rds.amazonaws.com:3306/mlctest --table train --columns "device_id,gender,age,group_train" --target-dir /home/hadoop/capstonetelcom/stage/train --driver org.mariadb.jdbc.Driver --username student -P -m 1
+
+
+hadoop fs -cp label_categories.csv /home/hadoop/capstonetelcom/stage/label_categories
+
+
+https://capstone-project-mlc-metadata.s3.amazonaws.com
+hadoop distcp /home/hadoop/app_labels_new.txt /home/hadoop/capstonetelcom/stage/app_labels
+
+create table app_events_stg (
+    event_id bigint,
+    app_id bigint,
+    is_installed int,
+    is_active int
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS PARQUET;
+
+create table app_events
+stored as parquet
+as
+select event_id,app_id,is_installed,is_active from app_events_stg2;
+
+load data inpath '/home/hadoop/capstonetelcom/stage/app_events2' into table app_events_stg2;
+
+create table app_events
+stored as parquet
+as
+select event_id,app_id,is_installed,is_active from app_events_stg2;
