@@ -1,5 +1,9 @@
-# upgradCapstonePrjTelcom
-upgrad Capstone Prj on Telcom industry data for predicting user demography
+# Upgrad Capstone Project On Telcom data
+
+**Problem statement**
+
+This Capstone project is based on the domain of the telecom sector. We will be working with a telecom data set and will be required to develop a model to help a company run different marketing campaigns and data monetisation activities around it. We are required to build a model that will predict the demographics of certain users, i.e., their age and gender. 
+Our aim is to predict the age and the gender of a particular user using this data. Once we have predicted the gender and age for each user, next task will be to map that particular user to the given target-specific ad campaigns. These campaigns aim to improve customer experience and open avenues for revenue generation through cross-selling and upselling activities, and for partnership with other companies for data monetisation activities.
 
 **Part 1 tasks**
 
