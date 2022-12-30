@@ -25,7 +25,7 @@ hadoop fs -ls /home/hadoop/capstonetelcom/stage/events
 
 hadoop fs -ls /home/hadoop/capstonetelcom/stage/train
 
-hadoop fs -cat /home/hadoop/capstonetelcom/stage/app_events/part-m-00000 | head
+hadoop fs -cat /home/hadoop/capstonetelcom/stage/app_events2/part-m-00000 | head
 
 hadoop fs -cat /home/hadoop/capstonetelcom/stage/brand_device/part-m-00000 | head
 
