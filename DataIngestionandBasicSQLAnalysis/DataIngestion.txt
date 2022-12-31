@@ -1,6 +1,15 @@
 Script for ingesting the relevant data from AWS RDS and S3 to Hadoop
 
-1. Moved the 2 files using Wincp from local machine (part s3) to Hadoop home and then moved them to separate folders
+1. Moved the 2 files using Wincp from local machine (downloaded from s3) to Hadoop home and then moved them to separate folders
+In /home/hadoop create the below folders
+
+mkdir capstonetelcom
+cd capstonetelcom
+mkdir stage
+cd stage
+mkdir applables
+mkdir labelcategories
+cd /home/hadoop
 
 cp /home/hadoop/app_labels_new.txt /home/hadoop/capstonetelcom/stage/applables/app_labels_new.txt
 cp /home/hadoop/label_categories.csv /home/hadoop/capstonetelcom/stage/labelcategories/label_categories.csv
