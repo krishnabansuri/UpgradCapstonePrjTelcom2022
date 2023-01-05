@@ -44,8 +44,22 @@ Model Building Subtasks
     -You can also group the existing categories to create a new supercategory that will establish a significance in predicting the outcome variable.
 4.	Advanced Visualisation and Clustering
   a)	Geospatial Visualisation
+      -basemap one of the Matplotlib toolkits under the mpl_toolkits
+      1.	Plot the visualisation plot for a sample of 1 lakh data points.
+          -sample 1 lakh data points of lat n long and visualize the data poitns on the map and analyse
+      2.	Compare the event visualisation plots based on the users' gender information. [This can be done on the sample of 1 lakh data points.]
+          -sample of 1 lakh points. visualization of several events or differnt lat and long on the map basis the gender info - different plot for male and female and check for differneces
+      3.	Compare the event visualisation plots based on the following age groups:
+        a)	0–24 
+        b)	25–32
+        c)	32+
   b)	DBSCAN Clustering as a preprocessing technique
+      -clustering
   c)	Final Data Preparation and Train-Test Splitting
+      Convert categorical data to numerical data
+      -one hot/label encoding from pandas
+      -csr matrix from scipy - sparse matrix
+      -use the mapping file to split the device ids in train and device ids in test
 11th Jan 2023 --------------------------------------------------------------------------------------------------------------------------
 5.	Model Building: Different Models
   a)	Segmenting the data [Scenario 1 and Scenario 2] 
