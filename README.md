@@ -46,11 +46,12 @@ Model Building Subtasks
   a)	Geospatial Visualisation
   b)	DBSCAN Clustering as a preprocessing technique
   c)	Final Data Preparation and Train-Test Splitting
-week ending 8 th Jan -------------------------------------------------------------------------------------------------------------------
+11th Jan 2023 --------------------------------------------------------------------------------------------------------------------------
 5.	Model Building: Different Models
   a)	Segmenting the data [Scenario 1 and Scenario 2] 
   b)	Gender and Age Prediction
   c)	Model Evaluation
+18th Jan 2023 --------------------------------------------------------------------------------------------------------------------------
 Deployment Subtasks
 1.	Select the best model based on the model evaluation metrics for only Scenario 1 [age and gender prediction]
 2.	Export the models as pickle files and save the pickle files
@@ -59,6 +60,7 @@ Deployment Subtasks
   a)	Design a flask application
   b)	Dockerize the application
   c)	Deploy the application on EC2
+23rd Jan 2023 --------------------------------------------------------------------------------------------------------------------------
 
 **O/P of Part 2**
 
