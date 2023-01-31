@@ -8,12 +8,12 @@ Our aim is to predict the age and the gender of a particular user using this dat
 **Part 2 tasks**
 
 Model Building Subtasks
-1.	Reading Data
+1.	Reading Data - done
   a)	Read the data from S3 in EC2
-2.	Cleaning Data
+2.	Cleaning Data - done
   a)	Example: Geospatial Data (Lat and Long =0 and btw -1 and 1)
   b)	Other Data Cleaning required - missing values and appropriate imputation required
-3.	Basic EDA and Visualisation - Ec2 in python notebooks, include necessary libraries
+3.	Basic EDA and Visualisation - done
   1.	Plot appropriate graphs representing the distribution of age and gender in the data set [univariate].
       -age and gender are the target variables, so distribution/% of male and female are there in the dataset has to be analysed
   2.	Boxplot analysis for gender and age [bivariate].
@@ -39,11 +39,11 @@ Model Building Subtasks
       -first take age grps and then plot of the top the mobile brands
 3.1 Feature Engineering tasks
     -Considering the events data, you can create a feature called Average Events, which can give you an estimate of how long the users' mobile phones are active.
-    -You can use the information related to the location of the users (latitude and longitude data) to create features representing changes in the latitude and longitude details at different times of the day.
-    -You can create features such as Median Latitude and Median Longitude for different event ids.
+    -You can use the information related to the location of the users (latitude and longitude data) to create features representing changes in the latitude and longitude details at different times of the day. - done
+    -You can create features such as Median Latitude and Median Longitude for different event ids.-done
     -You can also group the existing categories to create a new supercategory that will establish a significance in predicting the outcome variable.
 4.	Advanced Visualisation and Clustering
-  a)	Geospatial Visualisation
+  a)	Geospatial Visualisation - done
       -basemap one of the Matplotlib toolkits under the mpl_toolkits
       1.	Plot the visualisation plot for a sample of 1 lakh data points.
           -sample 1 lakh data points of lat n long and visualize the data poitns on the map and analyse
@@ -60,12 +60,26 @@ Model Building Subtasks
       -one hot/label encoding from pandas
       -csr matrix from scipy - sparse matrix
       -use the mapping file to split the device ids in train and device ids in test
-11th Jan 2023 --------------------------------------------------------------------------------------------------------------------------
+27th Jan 2023 --------------------------------------------------------------------------------------------------------------------------
 5.	Model Building: Different Models
-  a)	Segmenting the data [Scenario 1 and Scenario 2] 
+  a)	Segmenting the data [Scenario 1 and Scenario 2]
+      -segregate the data that is data that has event data and that doesnt have event data
+      Scenario 1: You have all the data present (i.e., you have the latitude-longitude data, application id data, event data and devices data).
+      Scenario 2: For some device ids, you may only have the mobile phone, brand and device data available.
   b)	Gender and Age Prediction
+      Gender - scenario1
+      -binary classification - logistic regression, XGboost classifier(GS HPT), stacking classifier
+      Age - scenario1
+      -either regression or classification model  (linear or logistic)
+      based on this choose xgboost regression/classifier
+      choose stacking classifier/regression
+    why we choose linear or classifier
+    Same has to be done for scenario 2
+    mobile phone brand and model
+      - use this for gender and age prediction
+    Hyperparametr tuning - mlextend
   c)	Model Evaluation
-18th Jan 2023 --------------------------------------------------------------------------------------------------------------------------
+28th Jan 2023 --------------------------------------------------------------------------------------------------------------------------
 Deployment Subtasks
 1.	Select the best model based on the model evaluation metrics for only Scenario 1 [age and gender prediction]
 2.	Export the models as pickle files and save the pickle files
@@ -74,13 +88,13 @@ Deployment Subtasks
   a)	Design a flask application
   b)	Dockerize the application
   c)	Deploy the application on EC2
-23rd Jan 2023 --------------------------------------------------------------------------------------------------------------------------
+29th Jan 2023 --------------------------------------------------------------------------------------------------------------------------
 
 **O/P of Part 2**
 
 **Upload a zip file titled MLC_CapstoneProject__FinalSubmission_Your Name containing the following:**
 
-Order - 
+
 
 **RDS Information:**
 Endpoint/Hostname: mlc-testcapstone.cyaielc9bmnf.us-east-1.rds.amazonaws.com
