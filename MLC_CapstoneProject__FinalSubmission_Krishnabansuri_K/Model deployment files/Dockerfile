@@ -11,7 +11,10 @@ RUN pip install -r ./requirements.txt
 # Copy local folder into the container
 COPY app.py /app/
 COPY /templates/index.html /app/templates/index.html
-
+COPY gender_model.pkl /app/gender_model.pkl
+COPY age_model.pkl /app/age_model.pkl
+COPY X_test_gender.npz /app/X_test_gender.npz
+COPY X_test_age.npz /app/X_test_age.npz
 
 # Set "python" as the entry point
 ENTRYPOINT ["python"]
