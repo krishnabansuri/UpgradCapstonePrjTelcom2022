@@ -37,12 +37,12 @@ Model Building Subtasks
       -some apps are heavily used by males nd some by females
   10.	List the top 10 mobile phone brands bought by customers by age groups. [Consider the following age groups: 0–24, 25–32, 33–45, and 46+]
       -first take age grps and then plot of the top the mobile brands
-3.1 Feature Engineering tasks
+3.1 Feature Engineering tasks - done
     -Considering the events data, you can create a feature called Average Events, which can give you an estimate of how long the users' mobile phones are active.
     -You can use the information related to the location of the users (latitude and longitude data) to create features representing changes in the latitude and longitude details at different times of the day. - done
     -You can create features such as Median Latitude and Median Longitude for different event ids.-done
     -You can also group the existing categories to create a new supercategory that will establish a significance in predicting the outcome variable.
-4.	Advanced Visualisation and Clustering
+4.	Advanced Visualisation and Clustering - done
   a)	Geospatial Visualisation - done
       -basemap one of the Matplotlib toolkits under the mpl_toolkits
       1.	Plot the visualisation plot for a sample of 1 lakh data points.
@@ -61,7 +61,7 @@ Model Building Subtasks
       -csr matrix from scipy - sparse matrix
       -use the mapping file to split the device ids in train and device ids in test
 27th Jan 2023 --------------------------------------------------------------------------------------------------------------------------
-5.	Model Building: Different Models
+5.	Model Building: Different Models - done
   a)	Segmenting the data [Scenario 1 and Scenario 2]
       -segregate the data that is data that has event data and that doesnt have event data
       Scenario 1: You have all the data present (i.e., you have the latitude-longitude data, application id data, event data and devices data).
